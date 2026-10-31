@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>DEEPSEEK — The Descent / 深潜</title>
+  <meta name="description" content="A field note from DeepSeek on machine intelligence — an immersive descent from the surface of a question to the floor of an answer.">
+  <meta name="theme-color" content="#04070e">
+  <meta name="color-scheme" content="dark">
+  <meta property="og:title" content="DEEPSEEK — The Descent">
+  <meta property="og:description" content="The deep is not silent. A field note on machine intelligence, in six chapters.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' fill='%2304070e'/%3E%3Ccircle cx='18' cy='18' r='14' fill='none' stroke='%234d6bfe' stroke-opacity='.5'/%3E%3Cpath d='M9 21.5c4.2-.6 7-4.4 9-11.5 2 7.1 4.8 10.9 9 11.5' fill='none' stroke='%23eaf0fa' stroke-width='1.5'/%3E%3Ccircle cx='18' cy='27' r='1.3' fill='%2386f7e8'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/main.css">
+  <script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#photic">Skip to the descent</a>
+
+  <!-- ══════════════ BOOT / PRELOADER ══════════════ -->
+  <div class="boot" id="boot" aria-label="Loading experience" role="status">
+    <div class="boot__panels" aria-hidden="true">
+      <i></i><i></i><i></i><i></i><i></i><i></i>
+    </div>
+    <div class="boot__ui">
+      <div class="boot__top">
+        <div class="boot__brand">
+          <svg class="mark" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+            <circle cx="18" cy="18" r="16.4" stroke="currentColor" stroke-opacity=".3" stroke-width=".8"/>
+            <path d="M9 21.5c4.2-.6 7-4.4 9-11.5 2 7.1 4.8 10.9 9 11.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            <path d="M12.4 26c2.7-.4 4.4-2.7 5.6-7.2 1.2 4.5 2.9 6.8 5.6 7.2" stroke="currentColor" stroke-opacity=".45" stroke-width="1" stroke-linecap="round"/>
+            <circle cx="18" cy="28.4" r="1.2" fill="#86f7e8"/>
+          </svg>
+          <span>DEEPSEEK</span>
+        </div>
+        <span class="boot__tag">ABYSSAL SYSTEMS</span>
+      </div>
+
+      <div class="boot__mid">
+        <div class="boot__sonar" aria-hidden="true">
+          <i></i><i></i><i></i><i></i>
+          <b></b>
+        </div>
+        <p class="boot__label" id="boot-label">SOUNDING THE DEPTHS</p>
+        <div class="boot__pct"><span id="boot-num">000</span><sup>%</sup></div>
+      </div>
+
+      <div class="boot__bottom">
+        <span>FIELD NOTE 001 — THE DESCENT</span>
+        <span class="boot__coords">31°13′N 122°45′E</span>
+        <button class="boot__skip" id="boot-skip" type="button">SKIP INTRO <span aria-hidden="true">↗</span></button>
+      </div>
+      <div class="boot__bar" aria-hidden="true"><i id="boot-bar"></i></div>
+    </div>
+  </div>
+
+  <!-- ══════════════ ATMOSPHERE ══════════════ -->
+  <canvas id="abyss" aria-hidden="true"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ══════════════ CHROME ══════════════ -->
+  <header class="topbar" id="topbar">
+    <div class="topbar__left">
+      <a class="brand" href="#surface" data-nav="#surface" aria-label="DeepSeek — back to surface">
+        <svg class="mark" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <circle cx="18" cy="18" r="16.4" stroke="currentColor" stroke-opacity=".3" stroke-width=".8"/>
+          <path d="M9 21.5c4.2-.6 7-4.4 9-11.5 2 7.1 4.8 10.9 9 11.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          <path d="M12.4 26c2.7-.4 4.4-2.7 5.6-7.2 1.2 4.5 2.9 6.8 5.6 7.2" stroke="currentColor" stroke-opacity=".45" stroke-width="1" stroke-linecap="round"/>
+          <circle cx="18" cy="28.4" r="1.2" fill="#86f7e8"/>
+        </svg>
+        <span class="brand__word">DEEPSEEK</span>
+      </a>
+      <span class="topbar__divider" aria-hidden="true"></span>
+      <span class="topbar__note">ABYSSAL / FIELD NOTE 001</span>
+    </div>
+    <div class="topbar__right">
+      <button class="chrome-btn sound" id="sound-toggle" type="button" aria-pressed="false">
+        <span class="sound__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span class="sound__label">SOUND OFF</span>
+      </button>
+      <span class="topbar__divider" aria-hidden="true"></span>
+      <button class="chrome-btn index-btn" id="index-open" type="button" aria-haspopup="dialog" aria-controls="palette">
+        <span>INDEX</span><kbd>⌘K</kbd>
+      </button>
+    </div>
+  </header>
+
+  <nav class="rail" aria-label="Dive chapters">
+    <div class="rail__track" aria-hidden="true"><i id="rail-fill"></i></div>
+    <span class="rail__label micro" aria-hidden="true">CHAPTERS</span>
+    <ol class="rail__list">
+      <li><button data-nav="#surface" data-chapter-link="0"><span class="rail__num">00</span><span class="rail__name">SURFACE</span><i></i></button></li>
+      <li><button data-nav="#photic" data-chapter-link="1"><span class="rail__num">01</span><span class="rail__name">PHOTIC</span><i></i></button></li>
+      <li><button data-nav="#twilight" data-chapter-link="2"><span class="rail__num">02</span><span class="rail__name">TWILIGHT</span><i></i></button></li>
+      <li><button data-nav="#midnight" data-chapter-link="3"><span class="rail__num">03</span><span class="rail__name">MIDNIGHT</span><i></i></button></li>
+      <li><button data-nav="#abyssal" data-chapter-link="4"><span class="rail__num">04</span><span class="rail__name">ABYSSAL</span><i></i></button></li>
+      <li><button data-nav="#hadal" data-chapter-link="5"><span class="rail__num">05</span><span class="rail__name">HADAL</span><i></i></button></li>
+      <li><button data-nav="#ascent" data-chapter-link="6"><span class="rail__num">06</span><span class="rail__name">ASCENT</span><i></i></button></li>
+    </ol>
+  </nav>
+
+  <div class="statusbar" aria-hidden="true">
+    <div class="statusbar__side">
+      <span class="micro">DEPTH</span>
+      <span class="hud__value" id="hud-depth">00000<em>M</em></span>
+      <span class="statusbar__sub"><span class="micro">PRESSURE</span><span id="hud-pressure">1.0 ATM</span><span class="hud__sep">/</span><span id="hud-temp">21.4°C</span></span>
+    </div>
+    <div class="statusbar__center"><span class="hud__live"><i></i>DIVE ACTIVE</span><span class="micro">ORPHEUS-01</span></div>
+    <div class="statusbar__side statusbar__side--r">
+      <span class="hud__coords">31°13′N&nbsp;&nbsp;122°45′E</span>
+      <span class="hud__time" id="hud-time">--:--:--</span>
+    </div>
+  </div>
+
+  <div class="progress" aria-hidden="true"><i id="progress-fill"></i></div>
+
+  <!-- ══════════════ MAIN ══════════════ -->
+  <main id="main">
+
+    <!-- ─────────── 00 SURFACE ─────────── -->
+    <section class="hero chapter" id="surface" data-chapter="0" data-depth="0" aria-labelledby="hero-title">
+      <div class="hero__grid shell">
+        <div class="hero__meta" data-reveal>
+          <span>TRANSMISSION 001</span>
+          <span class="hero__meta-mid">THE DESCENT</span>
+          <span>31°13′N — 122°45′E</span>
+        </div>
+
+        <p class="kicker" data-reveal data-reveal-delay="80">DEEPSEEK RESEARCH <span class="dot-sep">·</span> ABYSSAL SYSTEMS</p>
+
+        <h1 class="hero__title" id="hero-title">
+          <span class="mask"><span class="mask__i">THE DEEP</span></span>
+          <span class="mask"><span class="mask__i">IS NOT</span></span>
+          <span class="mask"><span class="mask__i"><em>SILENT.</em></span></span>
+        </h1>
+
+        <div class="hero__under">
+          <p class="hero__lede" data-reveal data-reveal-delay="160">A field note on machine intelligence — recorded during a descent from the surface of a question to the floor of an answer.</p>
+          <a class="scroll-cue" href="#photic" data-nav="#photic" data-cursor="DESCEND">
+            <span class="scroll-cue__line" aria-hidden="true"><i></i></span>
+            <span>SCROLL TO DESCEND</span>
+            <em>6 CHAPTERS · 10,994 M</em>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__cjk" aria-hidden="true">
+        <span class="hero__cjk-vert">深处有声</span>
+        <span class="hero__cjk-cap">THE DEEP IS AUDIBLE</span>
+      </div>
+
+      <button class="hero__stamp" id="sonar-btn" type="button" aria-label="DEEPSEEK · FIELD RECORDING 001 · NOT FOR NAVIGATION · EMIT A SONAR PULSE" data-cursor="SONAR" data-magnetic>
+        <svg viewBox="0 0 140 140" aria-hidden="true">
+          <defs><path id="stampPath" d="M70,70 m-53,0 a53,53 0 1,1 106,0 a53,53 0 1,1 -106,0"/></defs>
+          <text><textPath href="#stampPath" startOffset="0%">DEEPSEEK · FIELD RECORDING 001 · NOT FOR NAVIGATION · </textPath></text>
+        </svg>
+        <span class="hero__stamp-core"></span>
+      </button>
+
+      <div class="hero__scroll-line" aria-hidden="true"></div>
+    </section>
+
+    <!-- ─────────── 01 PHOTIC ─────────── -->
+    <section class="chapter chapter--photic" id="photic" data-chapter="1" data-depth="200" aria-labelledby="photic-title" tabindex="-1">
+      <div class="chapter__ghost" aria-hidden="true">200</div>
+      <div class="shell">
+        <header class="chapter__head" data-reveal>
+          <span class="chapter__index">01</span>
+          <span class="chapter__zone">PHOTIC ZONE</span>
+          <span class="chapter__rule" aria-hidden="true"></span>
+          <span class="chapter__meta">200 M · LIGHT 1.0%</span>
+        </header>
+
+        <div class="photic__top">
+          <h2 class="display" id="photic-title">
+            <span class="mask"><span class="mask__i">EVERY ANSWER</span></span>
+            <span class="mask"><span class="mask__i">IS A <em>SURFACE.</em></span></span>
+            <span class="display-note" lang="zh">每个答案，都是表面。</span>
+          </h2>
+          <div class="photic__aside" data-reveal>
+            <p class="eyebrow">TRANSMISSION NOTE / 01</p>
+            <p>The obvious is a lie of altitude. Near the surface, everything looks settled — until the light thins and the shapes below begin to disagree.</p>
+            <dl class="minitable">
+              <div><dt>ZONE</dt><dd>PHOTIC</dd></div>
+              <div><dt>DEPTH</dt><dd>0200 M</dd></div>
+              <div><dt>LIGHT</dt><dd>01.0%</dd></div>
+              <div><dt>STATUS</dt><dd class="is-live"><i></i>DESCENDING</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="photic__body">
+          <p class="lit-text" data-lit>
+            DeepSeek is built for that disagreement. We train models to hold a question long enough to reach its structure — to separate the shimmer of a plausible answer from the thing that survives the pressure. Not intelligence as performance. Intelligence as <span class="it">descent</span>: the discipline of going further than the first light reaches.
+          </p>
+          <aside class="photic__cjk" lang="zh">
+            <p class="photic__cjk-text">答案，只是表面。</p>
+            <p class="photic__cjk-en">EVERY ANSWER IS A SURFACE.</p>
+          </aside>
+        </div>
+
+        <figure class="pullquote" data-reveal>
+          <blockquote>Clarity is not brightness.<br><em>It is what survives the pressure.</em></blockquote>
+          <figcaption><span class="micro">PRINCIPLE 001</span><span class="pullquote__line"></span><span class="micro">DEEPSEEK RESEARCH</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ─────────── 02 TWILIGHT ─────────── -->
+    <section class="chapter chapter--twilight" id="twilight" data-chapter="2" data-depth="1000" aria-labelledby="twilight-title">
+      <div class="shell">
+        <header class="chapter__head" data-reveal>
+          <span class="chapter__index">02</span>
+          <span class="chapter__zone">TWILIGHT ZONE</span>
+          <span class="chapter__rule" aria-hidden="true"></span>
+          <span class="chapter__meta">1,000 M · LIGHT 0.01%</span>
+        </header>
+
+        <div class="twilight__intro">
+          <h2 class="display" id="twilight-title">
+            <span class="mask"><span class="mask__i">WHAT WE</span></span>
+            <span class="mask"><span class="mask__i">BUILT IN</span></span>
+            <span class="mask"><span class="mask__i">THE <em>DARK.</em></span></span>
+            <span class="display-note" lang="zh">我们在黑暗中建造。</span>
+          </h2>
+          <div class="twilight__intro-side" data-reveal>
+            <p>Six faculties, one instrument. The deeper the problem, the less the surface can help.</p>
+            <p class="micro">INTERACTIVE EXHIBIT / SELECT A SPECIMEN</p>
+          </div>
+        </div>
+
+        <div class="exhibit">
+          <aside class="specimen" data-reveal>
+            <div class="specimen__top">
+              <span class="micro">SPECIMEN VIEW</span>
+              <span class="micro specimen__index" id="specimen-index">01 / 06</span>
+            </div>
+            <div class="specimen__frame">
+              <canvas id="specimen-canvas" aria-hidden="true"></canvas>
+              <span class="corner corner--tl" aria-hidden="true"></span>
+              <span class="corner corner--tr" aria-hidden="true"></span>
+              <span class="corner corner--bl" aria-hidden="true"></span>
+              <span class="corner corner--br" aria-hidden="true"></span>
+              <div class="specimen__scan" aria-hidden="true"></div>
+              <div class="specimen__overlay">
+                <span class="micro" id="specimen-mode">NEURAL COIL</span>
+                <span class="micro specimen__live"><i></i>LIVE FIELD</span>
+              </div>
+            </div>
+            <div class="specimen__bottom">
+              <p class="specimen__caption" id="specimen-caption">A single argument, followed to its end.</p>
+              <span class="micro" id="specimen-code">DS-SPEC-001</span>
+            </div>
+          </aside>
+
+          <div class="capabilities" role="group" aria-label="Capability specimens">
+            <article class="cap is-active" data-cap="0">
+              <h3 class="cap__h">
+                <button class="cap__head" id="cap-tab-0" aria-expanded="true" aria-controls="cap-body-0" data-cursor="OPEN">
+                  <span class="cap__num">01</span>
+                  <span class="cap__name">REASONING</span>
+                  <span class="cap__tag">Chains of thought that survive the dark.</span>
+                  <span class="cap__plus" aria-hidden="true"><i></i><i></i></span>
+                </button>
+              </h3>
+              <div class="cap__body" role="region" id="cap-body-0" aria-labelledby="cap-tab-0">
+                <div class="cap__body-in">
+                  <p>Long-horizon deduction, self-correction, and the refusal to stop at the first plausible answer. Our models learn to inspect their own thinking — then to doubt it productively.</p>
+                  <ul class="chips"><li>MULTI-STEP</li><li>SELF-VERIFY</li><li>128K CONTEXT</li></ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="cap" data-cap="1">
+              <h3 class="cap__h">
+                <button class="cap__head" id="cap-tab-1" aria-expanded="false" aria-controls="cap-body-1" data-cursor="OPEN">
+                  <span class="cap__num">02</span>
+                  <span class="cap__name">CODE</span>
+                  <span class="cap__tag">From intent to machine, without translation loss.</span>
+                  <span class="cap__plus" aria-hidden="true"><i></i><i></i></span>
+                </button>
+              </h3>
+              <div class="cap__body" role="region" id="cap-body-1" aria-labelledby="cap-tab-1" hidden>
+                <div class="cap__body-in">
+                  <p>Code generation, repair, and review across the stack. Written to be read by humans. Executed by machines. Held to the standard of both.</p>
+                  <ul class="chips"><li>FULL-STACK</li><li>AGENTIC</li><li>REPO-SCALE</li></ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="cap" data-cap="2">
+              <h3 class="cap__h">
+                <button class="cap__head" id="cap-tab-2" aria-expanded="false" aria-controls="cap-body-2" data-cursor="OPEN">
+                  <span class="cap__num">03</span>
+                  <span class="cap__name">MATHEMATICS</span>
+                  <span class="cap__tag">Proof as a form of navigation.</span>
+                  <span class="cap__plus" aria-hidden="true"><i></i><i></i></span>
+                </button>
+              </h3>
+              <div class="cap__body" role="region" id="cap-body-2" aria-labelledby="cap-tab-2" hidden>
+                <div class="cap__body-in">
+                  <p>From conjecture to construction: competition-grade problem solving, formal reasoning, and the patience to check the last line. The answer is only the beginning; the proof is the way back.</p>
+                  <ul class="chips"><li>FORMAL</li><li>OLYMPIAD-GRADE</li><li>VERIFIABLE</li></ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="cap" data-cap="3">
+              <h3 class="cap__h">
+                <button class="cap__head" id="cap-tab-3" aria-expanded="false" aria-controls="cap-body-3" data-cursor="OPEN">
+                  <span class="cap__num">04</span>
+                  <span class="cap__name">LANGUAGE</span>
+                  <span class="cap__tag">Meaning, not mimicry.</span>
+                  <span class="cap__plus" aria-hidden="true"><i></i><i></i></span>
+                </button>
+              </h3>
+              <div class="cap__body" role="region" id="cap-body-3" aria-labelledby="cap-tab-3" hidden>
+                <div class="cap__body-in">
+                  <p>Translation, synthesis, register, restraint — the full weather of human speech, held in a single instrument. It does not just speak. It listens for what a sentence is trying to become.</p>
+                  <ul class="chips"><li>100+ LANGUAGES</li><li>LONG-FORM</li><li>VOICE</li></ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="cap" data-cap="4">
+              <h3 class="cap__h">
+                <button class="cap__head" id="cap-tab-4" aria-expanded="false" aria-controls="cap-body-4" data-cursor="OPEN">
+                  <span class="cap__num">05</span>
+                  <span class="cap__name">VISION</span>
+                  <span class="cap__tag">Sight, as a form of reading.</span>
+                  <span class="cap__plus" aria-hidden="true"><i></i><i></i></span>
+                </button>
+              </h3>
+              <div class="cap__body" role="region" id="cap-body-4" aria-labelledby="cap-tab-4" hidden>
+                <div class="cap__body-in">
+                  <p>Documents, diagrams, interfaces, the physical world. Understanding is not naming what is in the frame — it is knowing what the frame is for.</p>
+                  <ul class="chips"><li>DOCUMENTS</li><li>DIAGRAMS</li><li>GROUNDING</li></ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="cap" data-cap="5">
+              <h3 class="cap__h">
+                <button class="cap__head" id="cap-tab-5" aria-expanded="false" aria-controls="cap-body-5" data-cursor="OPEN">
+                  <span class="cap__num">06</span>
+                  <span class="cap__name">AGENTS</span>
+                  <span class="cap__tag">Long horizons, steady hands.</span>
+                  <span class="cap__plus" aria-hidden="true"><i></i><i></i></span>
+                </button>
+              </h3>
+              <div class="cap__body" role="region" id="cap-body-5" aria-labelledby="cap-tab-5" hidden>
+                <div class="cap__body-in">
+                  <p>Planning, tool use, and persistence across hundreds of steps — with a memory that does not drift and a sense for when to stop. Autonomy without amnesia.</p>
+                  <ul class="chips"><li>TOOL USE</li><li>PERSISTENT MEMORY</li><li>AUTONOMY</li></ul>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────── 03 MIDNIGHT ─────────── -->
+    <section class="chapter chapter--midnight" id="midnight" data-chapter="3" data-depth="4000" aria-labelledby="midnight-title">
+      <div class="shell">
+        <header class="chapter__head" data-reveal>
+          <span class="chapter__index">03</span>
+          <span class="chapter__zone">MIDNIGHT ZONE</span>
+          <span class="chapter__rule" aria-hidden="true"></span>
+          <span class="chapter__meta">4,000 M · LIGHT 0.00%</span>
+        </header>
+
+        <div class="midnight__intro">
+          <h2 class="display" id="midnight-title">
+            <span class="mask"><span class="mask__i">LISTEN</span></span>
+            <span class="mask"><span class="mask__i">TO IT <em>THINK.</em></span></span>
+            <span class="display-note" lang="zh">聆听，它正在思考。</span>
+          </h2>
+          <p class="midnight__sub" data-reveal>No network. No live model. A recorded descent through reasoning, replayed exactly as it felt from the inside.</p>
+        </div>
+
+        <div class="console" data-reveal>
+          <div class="console__top">
+            <div class="console__id"><i class="dot"></i><span>DEEPSEEK // REASONING CONSOLE</span><span class="console__build">BUILD 001</span></div>
+            <div class="console__status"><span class="micro">SIMULATED · LOCAL</span><span class="console__rec"><i></i>REC</span></div>
+          </div>
+
+          <div class="console__body">
+            <aside class="console__side">
+              <p class="micro console__side-label">SELECT A TRANSMISSION</p>
+              <div class="prompts" role="tablist" aria-orientation="vertical">
+                <button class="prompt is-active" id="prompt-0" role="tab" aria-selected="true" aria-controls="demo-stream" data-prompt="0">
+                  <span class="prompt__num">01</span><span class="prompt__text">Why is the ocean blue?</span><span class="prompt__arrow" aria-hidden="true">↗</span>
+                </button>
+                <button class="prompt" id="prompt-1" role="tab" aria-selected="false" aria-controls="demo-stream" data-prompt="1" tabindex="-1">
+                  <span class="prompt__num">02</span><span class="prompt__text">Invent a sport that only works in zero gravity.</span><span class="prompt__arrow" aria-hidden="true">↗</span>
+                </button>
+                <button class="prompt" id="prompt-2" role="tab" aria-selected="false" aria-controls="demo-stream" data-prompt="2" tabindex="-1">
+                  <span class="prompt__num">03</span><span class="prompt__text">Is a proof still true if no one checks it?</span><span class="prompt__arrow" aria-hidden="true">↗</span>
+                </button>
+                <button class="prompt" id="prompt-3" role="tab" aria-selected="false" aria-controls="demo-stream" data-prompt="3" tabindex="-1">
+                  <span class="prompt__num">04</span><span class="prompt__text">Write a lullaby for a machine about to dream.</span><span class="prompt__arrow" aria-hidden="true">↗</span>
+                </button>
+              </div>
+
+              <div class="console__controls">
+                <button class="btn btn--run" id="demo-run" type="button" data-cursor="RUN" data-magnetic><span>RUN TRANSMISSION</span><i aria-hidden="true">→</i></button>
+                <button class="btn btn--quiet" id="demo-skip" type="button" disabled>SKIP</button>
+              </div>
+
+              <div class="console__profile">
+                <span class="micro">TRACE PROFILE</span>
+                <div class="profile-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                <span class="micro micro--dim">R1 / DISTILLED</span>
+              </div>
+
+              <p class="console__disclaimer">A designed simulation of the reasoning interface. Every token is scripted and streamed locally — no network, no live model.</p>
+            </aside>
+
+            <div class="console__main">
+              <div class="stream" id="demo-stream" role="tabpanel" aria-labelledby="prompt-0">
+                <div class="stream__query">
+                  <span class="micro">QUERY / <span id="demo-query-num">01</span></span>
+                  <p id="demo-query">Why is the ocean blue?</p>
+                </div>
+
+                <div class="stream__think" id="demo-think">
+                  <div class="stream__label"><span class="think-dot" aria-hidden="true"></span>THINKING<span class="stream__counter" id="demo-think-counter">000</span></div>
+                  <div class="think-idle" id="demo-think-idle">AWAITING A QUESTION — THE TRACE WILL APPEAR HERE</div>
+                  <div class="think-lines" id="demo-think-lines"></div>
+                </div>
+
+                <div class="stream__answer-block">
+                  <div class="stream__label"><span class="diamond" aria-hidden="true"></span>ANSWER<span class="stream__meta-right" id="demo-answer-meta"></span></div>
+                  <div class="stream__answer" id="demo-answer" tabindex="0" role="region" aria-label="Reasoning answer, scrollable"><span class="stream__placeholder">Select a transmission, then run it.<span class="caret"></span></span></div>
+                </div>
+
+                <div class="stream__sonar">
+                  <div class="stream__sonar-head">
+                    <span class="micro">SIGNAL TRACE</span>
+                    <span class="micro micro--dim" id="demo-phase">IDLE</span>
+                  </div>
+                  <canvas id="demo-sonar" aria-hidden="true"></canvas>
+                </div>
+              </div>
+
+              <div class="console__stats">
+                <div><span class="micro">TTFT</span><b id="stat-ttft">—</b></div>
+                <div><span class="micro">TOK/S</span><b id="stat-tps">—</b></div>
+                <div><span class="micro">TOKENS</span><b id="stat-tokens">000</b></div>
+                <div><span class="micro">DEPTH</span><b>4,000 M</b></div>
+                <div class="console__remote"><span class="micro">SESSION</span><b id="stat-session">DS-041</b></div>
+              </div>
+            </div>
+          </div>
+          <div class="console__bottom">
+            <span class="micro">ESC TO ABORT</span>
+            <span class="console__dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+            <span class="micro">ALL TELEMETRY SIMULATED</span>
+          </div>
+        </div>
+
+        <p class="sr-only" id="demo-status" role="status"></p>
+      </div>
+    </section>
+
+    <!-- ─────────── 04 ABYSSAL ─────────── -->
+    <section class="chapter chapter--abyssal" id="abyssal" data-chapter="4" data-depth="6000" aria-labelledby="abyssal-title">
+      <div class="shell">
+        <header class="chapter__head" data-reveal>
+          <span class="chapter__index">04</span>
+          <span class="chapter__zone">ABYSSAL ZONE</span>
+          <span class="chapter__rule" aria-hidden="true"></span>
+          <span class="chapter__meta">6,000 M · PRESSURE 601 ATM</span>
+        </header>
+
+        <div class="abyssal__intro">
+          <h2 class="display" id="abyssal-title">
+            <span class="mask"><span class="mask__i">A PARLIAMENT</span></span>
+            <span class="mask"><span class="mask__i">OF <em>EXPERTS.</em></span></span>
+            <span class="display-note" lang="zh">专家们，在静默中投票。</span>
+          </h2>
+          <div class="abyssal__copy" data-reveal>
+            <p class="lead">No single neuron knows the answer. <span class="it">That is the answer.</span></p>
+            <p>671 billion parameters — and only a fraction of them wake for any given token. DeepSeek's mixture-of-experts architecture routes each thought to the specialists it needs: a parliament that convenes around your question, votes in silence, and dissolves.</p>
+            <p>Scale is not one enormous voice. It is many precise ones, agreeing.</p>
+          </div>
+        </div>
+
+        <div class="moe" data-reveal>
+          <div class="moe__panel" tabindex="0" role="group" aria-label="Mixture-of-experts routing field" aria-describedby="moe-kbd-help">
+            <canvas id="moe-canvas" aria-hidden="true"></canvas>
+            <span class="corner corner--tl" aria-hidden="true"></span>
+            <span class="corner corner--tr" aria-hidden="true"></span>
+            <span class="corner corner--bl" aria-hidden="true"></span>
+            <span class="corner corner--br" aria-hidden="true"></span>
+            <div class="moe__chrome moe__chrome--top">
+              <span class="micro">ROUTING FIELD / 16 × 16</span>
+              <span class="micro moe__live"><i></i>LIVE SESSION</span>
+            </div>
+            <div class="moe__chrome moe__chrome--bottom">
+              <div><span class="micro">AWAKE</span><b id="moe-awake">08</b><span class="moe__of">/ 256</span></div>
+              <div><span class="micro">SHARED</span><b>01</b></div>
+              <div><span class="micro">ROUTE</span><b id="moe-route">#0000</b></div>
+              <div class="moe__hint"><span class="micro">HOVER OR ARROWS TO INSPECT · CLICK / ENTER TO PIN</span></div>
+            </div>
+            <div class="moe__tooltip" id="moe-tip" hidden>
+              <div class="moe__tip-head"><span id="moe-tip-id">EXPERT 000</span><span class="moe__tip-state" id="moe-tip-state">STANDBY</span></div>
+              <p id="moe-tip-name">SPECIALTY</p>
+              <div class="moe__tip-meta"><span id="moe-tip-load">LOAD 00.0%</span><span id="moe-tip-code">CODE</span></div>
+            </div>
+          </div>
+          <div class="moe__under">
+            <p class="moe__caption" id="moe-caption">Every cell is a specialist. Every token, an election.</p>
+            <p class="sr-only" id="moe-desc">An interactive visualization of a mixture-of-experts routing field. 256 experts orbit a central routing core; eight are selected each cycle. Hover or tap the field to inspect experts.</p>
+            <p class="sr-only" id="moe-kbd-help">Keyboard controls: use the arrow keys to inspect experts, Enter to pin or unpin an expert, and Escape to clear the inspection.</p>
+            <p class="sr-only" id="moe-a11y" role="status" aria-live="polite"></p>
+            <dl class="moe__stats">
+              <div><dt>ROUTED EXPERTS</dt><dd>256</dd></div>
+              <div><dt>TOP-K ROUTING</dt><dd>8</dd></div>
+              <div><dt>SHARED EXPERT</dt><dd>1</dd></div>
+              <div><dt>ACTIVE / TOKEN</dt><dd>37<span>B</span></dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <blockquote class="abyssal__quote" data-reveal>
+          <p>“A mind is not the loudest voice in the room.<br><em>It is the room.</em>”</p>
+          <cite class="micro">DEEPSEEK / ARCHITECTURE NOTES</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ─────────── 05 HADAL ─────────── -->
+    <section class="chapter chapter--hadal" id="hadal" data-chapter="5" data-depth="10994" aria-labelledby="hadal-title">
+      <div class="shell">
+        <header class="chapter__head" data-reveal>
+          <span class="chapter__index">05</span>
+          <span class="chapter__zone">HADAL ZONE</span>
+          <span class="chapter__rule" aria-hidden="true"></span>
+          <span class="chapter__meta">10,994 M · PRESSURE 1,100 ATM</span>
+        </header>
+
+        <div class="hadal__top">
+          <h2 class="display" id="hadal-title">
+            <span class="mask"><span class="mask__i">SCALE IS</span></span>
+            <span class="mask"><span class="mask__i">A <em>FEELING.</em></span></span>
+            <span class="display-note" lang="zh">尺度，是一种感受。</span>
+          </h2>
+          <div class="bigcount" data-reveal>
+            <div class="bigcount__row"><span class="bigcount__num" id="count-params" data-count="671" data-format="int">000</span><span class="bigcount__unit">B</span></div>
+            <p>parameters, and most of them are asleep. Intelligence is not how much of the mind is awake — it is how precisely the right parts wake.</p>
+          </div>
+        </div>
+
+        <div class="stats" data-reveal>
+          <div class="stat"><span class="micro">TOTAL PARAMETERS</span><div class="stat__value"><span data-count="671" data-format="int">0</span><em>B</em></div><span class="stat__note">the whole city</span></div>
+          <div class="stat"><span class="micro">ACTIVE PER TOKEN</span><div class="stat__value"><span data-count="37" data-format="int">0</span><em>B</em></div><span class="stat__note">the ones who answer</span></div>
+          <div class="stat"><span class="micro">CONTEXT WINDOW</span><div class="stat__value"><span data-count="128" data-format="int">0</span><em>K</em></div><span class="stat__note">how far it can remember</span></div>
+          <div class="stat"><span class="micro">PRETRAINING TOKENS</span><div class="stat__value"><span data-count="14.8" data-format="dec">0</span><em>T</em></div><span class="stat__note">how much it has read</span></div>
+        </div>
+
+        <div class="profile" data-reveal>
+          <div class="profile__head">
+            <span class="micro">DESCENT PROFILE / SUBMERSIBLE ORPHEUS-01</span>
+            <span class="micro micro--dim">10,994 M TO THE FLOOR</span>
+          </div>
+          <div class="profile__grid">
+            <div class="profile__chart">
+              <svg id="depth-profile" viewBox="0 0 900 320" preserveAspectRatio="none" aria-hidden="true">
+                <defs>
+                  <linearGradient id="profileGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#86f7e8" stop-opacity=".9"/>
+                    <stop offset=".55" stop-color="#4d6bfe" stop-opacity=".8"/>
+                    <stop offset="1" stop-color="#4d6bfe" stop-opacity=".15"/>
+                  </linearGradient>
+                  <linearGradient id="profileFill" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#4d6bfe" stop-opacity=".16"/>
+                    <stop offset="1" stop-color="#04070e" stop-opacity="0"/>
+                  </linearGradient>
+                  <filter id="profileGlow"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                </defs>
+                <g class="profile__gridlines">
+                  <line x1="0" y1="0" x2="900" y2="0"/><line x1="0" y1="80" x2="900" y2="80"/><line x1="0" y1="160" x2="900" y2="160"/><line x1="0" y1="240" x2="900" y2="240"/><line x1="0" y1="319" x2="900" y2="319"/>
+                </g>
+                <path id="profile-area" d="M0,10 C120,12 150,120 300,150 C420,176 470,236 620,258 C720,272 800,292 900,300 L900,320 L0,320 Z"/>
+                <path id="profile-line" d="M0,10 C120,12 150,120 300,150 C420,176 470,236 620,258 C720,272 800,292 900,300"/>
+                <g id="profile-marker"><circle r="4.5"/><circle r="12" class="pulse"/></g>
+              </svg>
+              <div class="profile__labels" aria-hidden="true">
+                <span class="profile__zone-1">SURFACE</span>
+                <span class="profile__zone-2">PHOTIC</span>
+                <span class="profile__zone-3">TWILIGHT</span>
+                <span class="profile__zone-4">MIDNIGHT</span>
+                <span class="profile__zone-5">ABYSSAL</span>
+                <span class="profile__zone-6">HADAL</span>
+              </div>
+              <div class="profile__axis" aria-hidden="true"><span>0 M</span><span>10,994 M</span></div>
+            </div>
+            <aside class="profile__note">
+              <span class="micro">INSTRUMENT NOTE</span>
+              <p>The pressure here would crush a submarine.<br><em>A question does not notice.</em></p>
+              <dl class="minitable">
+                <div><dt>PRESSURE</dt><dd id="hadal-pressure">1,100 ATM</dd></div>
+                <div><dt>WATER</dt><dd>1.4°C</dd></div>
+                <div><dt>LIGHT</dt><dd>0.00%</dd></div>
+                <div><dt>STATUS</dt><dd>FLOOR REACHED</dd></div>
+              </dl>
+            </aside>
+          </div>
+        </div>
+
+        <figure class="hadal__quote" data-reveal>
+          <blockquote>To reason is to refuse<br><em>the first answer.</em></blockquote>
+          <figcaption><span class="micro">DEEPSEEK — FIELD NOTE 001</span><span class="hadal__quote-line" aria-hidden="true"></span><span class="micro">31°13′N 122°45′E</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ─────────── 06 ASCENT ─────────── -->
+    <section class="chapter chapter--ascent" id="ascent" data-chapter="6" data-depth="0" aria-labelledby="ascent-title">
+      <div class="shell">
+        <header class="chapter__head" data-reveal>
+          <span class="chapter__index">06</span>
+          <span class="chapter__zone">ASCENT</span>
+          <span class="chapter__rule" aria-hidden="true"></span>
+          <span class="chapter__meta">SURFACE / SIGNAL 100%</span>
+        </header>
+
+        <div class="ascent__top">
+          <h2 class="display ascent__title" id="ascent-title">
+            <span class="mask"><span class="mask__i">THERE IS</span></span>
+            <span class="mask"><span class="mask__i">NO <em>FLOOR.</em></span></span>
+          </h2>
+          <p class="ascent__cjk" lang="zh" aria-hidden="true">没有底部。</p>
+        </div>
+
+        <div class="ascent__lead" data-reveal>
+          <p>Every answer is a temporary surface. The next question is always deeper. Ask us something that matters — or better, something that doesn't yet have a name.</p>
+          <div class="ascent__links">
+            <a class="line-link" href="https://www.deepseek.com" target="_blank" rel="noopener" data-cursor="VISIT">DEEPSEEK.COM <span aria-hidden="true">↗</span></a>
+            <a class="line-link" href="https://github.com/deepseek-ai" target="_blank" rel="noopener" data-cursor="VISIT">RESEARCH <span aria-hidden="true">↗</span></a>
+            <a class="line-link" href="#surface" data-nav="#surface" data-cursor="RISE">RESURFACE <span class="up" aria-hidden="true">↑</span></a>
+          </div>
+        </div>
+
+        <div class="ask" data-reveal>
+          <form id="ask-form" novalidate>
+            <label class="micro ask__label" for="ask-input">ASK THE DEEP / TRANSMISSION FORM</label>
+            <div class="ask__row">
+              <input id="ask-input" name="question" type="text" maxlength="160" autocomplete="off" spellcheck="false" placeholder="What would you ask the bottom of the world?" aria-describedby="ask-note ask-error">
+              <button class="ask__submit" type="submit" aria-label="Send question" data-cursor="SEND">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+            <p class="ask__error micro" id="ask-error" role="status" hidden>PLEASE ASK SOMETHING FIRST</p>
+            <div class="ask__note-row">
+              <p class="micro" id="ask-note">LOCAL ONLY · NOTHING LEAVES THIS PAGE · NOTHING IS SENT TO A MODEL</p>
+              <p class="micro micro--dim">DEPTH KEY <span id="ask-depth-key">10,994 M</span></p>
+            </div>
+          </form>
+
+          <div class="record" id="record" hidden aria-live="polite">
+            <div class="record__head">
+              <span class="micro">DESCENT RECORD</span>
+              <span class="record__id" id="record-id">DS-∞-0000</span>
+              <span class="micro record__stamp">LOGGED</span>
+            </div>
+            <p class="record__question" id="record-question">—</p>
+            <div class="record__grid">
+              <div><span class="micro">DEPTH</span><b id="record-depth">—</b></div>
+              <div><span class="micro">PRESSURE</span><b id="record-pressure">—</b></div>
+              <div><span class="micro">WATER</span><b id="record-temp">—</b></div>
+              <div><span class="micro">SIGNAL</span><b class="is-live"><i></i>STRONG</b></div>
+            </div>
+            <p class="record__answer" id="record-answer">—</p>
+            <div class="record__foot">
+              <span class="micro">DEEPSEEK / THE DESCENT — FIELD NOTE 001</span>
+              <button class="btn btn--quiet" id="record-copy" type="button">COPY RECORD</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="ascent__outro" data-reveal>
+          <span class="micro">DIVING IS A WAY OF LISTENING</span>
+          <button class="resurface" type="button" data-nav="#surface" data-cursor="RISE"><span>BACK TO THE SURFACE</span><i aria-hidden="true">↑</i></button>
+        </div>
+      </div>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span>深度求索</span><i>✳</i><span>DIVE DEEPER</span><i>✳</i><span>NO FLOOR</span><i>✳</i><span>深度求索</span><i>✳</i><span>DIVE DEEPER</span><i>✳</i><span>NO FLOOR</span><i>✳</i>
+          <span>深度求索</span><i>✳</i><span>DIVE DEEPER</span><i>✳</i><span>NO FLOOR</span><i>✳</i><span>深度求索</span><i>✳</i><span>DIVE DEEPER</span><i>✳</i><span>NO FLOOR</span><i>✳</i>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="shell">
+          <div class="footer__top">
+            <div class="footer__brand">
+              <svg class="mark mark--lg" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+                <circle cx="18" cy="18" r="16.4" stroke="currentColor" stroke-opacity=".3" stroke-width=".8"/>
+                <path d="M9 21.5c4.2-.6 7-4.4 9-11.5 2 7.1 4.8 10.9 9 11.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                <path d="M12.4 26c2.7-.4 4.4-2.7 5.6-7.2 1.2 4.5 2.9 6.8 5.6 7.2" stroke="currentColor" stroke-opacity=".45" stroke-width="1" stroke-linecap="round"/>
+                <circle cx="18" cy="28.4" r="1.2" fill="#86f7e8"/>
+              </svg>
+              <div><p class="footer__word">DEEPSEEK</p><p class="micro">THE DESCENT / FIELD NOTE 001</p></div>
+            </div>
+            <div class="footer__cols">
+              <div><span class="micro">EXPLORE</span><a href="#photic" data-nav="#photic">01 — Photic</a><a href="#twilight" data-nav="#twilight">02 — What We Built</a><a href="#midnight" data-nav="#midnight">03 — Listen</a></div>
+              <div><span class="micro">SYSTEMS</span><a href="#abyssal" data-nav="#abyssal">04 — The Parliament</a><a href="#hadal" data-nav="#hadal">05 — Scale</a><a href="#ascent" data-nav="#ascent">06 — Ascend</a></div>
+              <div><span class="micro">ELSEWHERE</span><a href="https://www.deepseek.com" target="_blank" rel="noopener">DeepSeek ↗</a><a href="https://github.com/deepseek-ai" target="_blank" rel="noopener">GitHub ↗</a><a href="https://api-docs.deepseek.com" target="_blank" rel="noopener">API Docs ↗</a></div>
+            </div>
+          </div>
+          <div class="footer__disclaimer">
+            <p>A speculative concept experience by DeepSeek. Model figures reflect publicly described architecture; all reasoning traces, telemetry, and responses on this page are scripted or generated locally in your browser. No live model is contacted, and no question leaves this page.</p>
+            <p class="micro">SET IN INSTRUMENT SERIF, SPACE GROTESK &amp; JETBRAINS MONO · GENERATIVE VISUALS RENDERED IN WEBGL &amp; CANVAS · © 2026 DEEPSEEK</p>
+          </div>
+          <div class="footer__bottom">
+            <span class="micro">31°13′N 122°45′E</span>
+            <span class="micro">NO FLOOR DETECTED</span>
+            <span class="micro" id="footer-time">LOCAL —:—:—</span>
+          </div>
+          <div class="footer__huge" aria-hidden="true"><span>DEEPSEEK</span></div>
+        </div>
+      </footer>
+    </section>
+  </main>
+
+  <!-- ══════════════ COMMAND PALETTE ══════════════ -->
+  <div class="palette" id="palette" hidden>
+    <div class="palette__scrim" data-palette-close></div>
+    <div class="palette__panel" role="dialog" aria-modal="true" aria-labelledby="palette-title">
+      <div class="palette__head">
+        <span id="palette-title">INDEX / DEEPSEEK FIELD NOTE 001</span>
+        <button class="palette__close" type="button" aria-label="ESC — close index" data-palette-close>ESC</button>
+      </div>
+      <div class="palette__search">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.2"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        <input id="palette-input" type="text" placeholder="Jump to a depth, or run a command…" autocomplete="off" spellcheck="false" aria-label="Search chapters and commands">
+        <span class="palette__kbd"><kbd>↑</kbd><kbd>↓</kbd></span>
+      </div>
+      <ul class="palette__list" id="palette-list" role="listbox" aria-label="Chapters and commands" tabindex="0"></ul>
+      <div class="palette__foot">
+        <span><kbd>↑↓</kbd> NAVIGATE</span><span><kbd>↵</kbd> SELECT</span><span><kbd>ESC</kbd> CLOSE</span><span class="palette__foot-right">ORPHEUS-01 · READY</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor__ring"><span class="cursor__label"></span></div>
+    <div class="cursor__dot"></div>
+  </div>
+
+  <noscript>
+    <div class="noscript">This experience is best with JavaScript. The words, however, are all here: intelligence is a depth, not a ladder. <a href="https://www.deepseek.com">DeepSeek</a>.</div>
+  </noscript>
+
+  <script src="js/abyss.js" defer></script>
+  <script src="js/audio.js" defer></script>
+  <script src="js/cursor.js" defer></script>
+  <script src="js/moe.js" defer></script>
+  <script src="js/specimen.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>
