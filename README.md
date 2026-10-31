@@ -2,6 +2,8 @@
 
 **Field Note 001** — an immersive, single-page concept experience from the deep.
 
+**Live:** <https://blandalpha.github.io/deepseek-the-descent/> · **Repository:** <https://github.com/BlandAlpha/deepseek-the-descent>
+
 Open **`index.html`** in a modern browser. No build step, no server, no network required — every texture, shader, particle, typeface and sound is generated or self-hosted locally.
 
 ## The experience
